@@ -12,15 +12,17 @@ export const action = async ({ request }: ActionArgs) => {
   switch (action) {
     case "create-new-chat":
       const randomChatId = uuidv4();
-    //return createUserSession({ request, chatId: randomChatId, pseudo });
+      await createUserSession({ request, chatId: randomChatId, pseudo });
     case "join-existing-chat":
-      const chatId = formData.get("chat-id") as string;
+      console.log("2");
+
+    /*const chatId = formData.get("chat-id") as string;
       if (!chatId) {
         return redirect("/");
       }
-    //return createUserSession({ request, chatId, pseudo });
+    return createUserSession({ request, chatId, pseudo });*/
     default:
-      return json("unrecognized action: ", { status: 400 });
+      console.log("3");
   }
 
   return null;
