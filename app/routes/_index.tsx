@@ -9,7 +9,7 @@ export const action = async ({ request }: ActionArgs) => {
   const action = formData.get("_action") as string;
   const pseudo = formData.get("pseudo") as string;
 
-  /*switch (action) {
+  switch (action) {
     case "create-new-chat":
       const randomChatId = uuidv4();
     //return createUserSession({ request, chatId: randomChatId, pseudo });
@@ -21,7 +21,7 @@ export const action = async ({ request }: ActionArgs) => {
     //return createUserSession({ request, chatId, pseudo });
     default:
       return json("unrecognized action: ", { status: 400 });
-  }*/
+  }
 
   return null;
 };
