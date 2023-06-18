@@ -5,7 +5,7 @@ import { createUserSession } from "~/session.server";
 import JoinChat from "~/theme/pages/JoinChat";
 
 export const action = async ({ request }: ActionArgs) => {
-  /*const formData = await request.formData();
+  const formData = await request.formData();
   const action = formData.get("_action") as string;
   const pseudo = formData.get("pseudo") as string;
 
