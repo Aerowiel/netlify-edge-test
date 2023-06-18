@@ -3,13 +3,6 @@ import { json } from "react-router";
 import { v4 as uuidv4 } from "uuid";
 import JoinChat from "~/theme/pages/JoinChat";
 
-export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "Zanon" },
-    { name: "description", content: "Zanon, anonymous chat" },
-  ];
-};
-
 export const action = async ({ request }: ActionArgs) => {
   const formData = await request.formData();
   const action = formData.get("_action") as string;
