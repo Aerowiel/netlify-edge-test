@@ -1,7 +1,6 @@
 import { ActionArgs, V2_MetaFunction, redirect } from "@remix-run/node";
 import { json } from "react-router";
 import { v4 as uuidv4 } from "uuid";
-import { createUserSession } from "~/session.server";
 import JoinChat from "~/theme/pages/JoinChat";
 
 export const meta: V2_MetaFunction = () => {
@@ -19,13 +18,13 @@ export const action = async ({ request }: ActionArgs) => {
   switch (action) {
     case "create-new-chat":
       const randomChatId = uuidv4();
-      return createUserSession({ request, chatId: randomChatId, pseudo });
+    //return createUserSession({ request, chatId: randomChatId, pseudo });
     case "join-existing-chat":
       const chatId = formData.get("chat-id") as string;
       if (!chatId) {
         return redirect("/");
       }
-      return createUserSession({ request, chatId, pseudo });
+    //return createUserSession({ request, chatId, pseudo });
     default:
       return json("unrecognized action: ", { status: 400 });
   }
